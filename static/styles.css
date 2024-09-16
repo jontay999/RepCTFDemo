@@ -1,0 +1,22 @@
+body {
+  background: url(/static/game-bg.png) #1a1a1a;
+  color: #eee;
+  font-family: Calibri, Helvetica, sans-serif;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.tab {
+  display: inline-block;
+  padding: 10px 20px;
+  margin: 5px;
+  border: 2px solid #007bff; /* Blue border */
+  background-color: #f8f9fa; /* Light background */
+  color: #007bff; /* Blue text */
+  font-size: 16px;
+  font-family: Arial, sans-serif;
+  cursor: pointer;
+  border-radius: 5px;
+  text-align: center;
+  transition: background-color 0.3s, color 0.3s, transform 0.2s; /* Smooth transitions */
+}

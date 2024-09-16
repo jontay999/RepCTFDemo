@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="./static/styles.css" />
+    <script>
+      const chooseTab = (num) => {
+        let html = "Image " + parseInt(num) + "<br>";
+        html += "<img src='./static/" + num + ".png' />";
+        document.getElementById("tabContent").innerHTML = html;
+        window.location.hash = num;
+      };
+
+      window.onload = function () {
+        chooseTab(unescape(location.hash.substr(1)) || "1");
+      };
+    </script>
+  </head>
+  <body>
+    <div class="tab" id="tab1" onclick="chooseTab('1')">Image 1</div>
+    <div class="tab" id="tab2" onclick="chooseTab('2')">Image 2</div>
+    <div class="tab" id="tab3" onclick="chooseTab('3')">Image 3</div>
+    <div style="margin-top: 20px" id="tabContent"></div>
+  </body>
+</html>
