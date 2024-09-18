@@ -16,7 +16,8 @@ body {
   text-align: center;
 }
 </style></head>
-  <body id="level1">
+  <script>document.cookie = "FLAG=NOT_REP{h3ll0_w0rld}"</script> 
+  <body>
       <div style="height:100%; display:grid; place-items:center">
 """
 
@@ -27,9 +28,10 @@ page_footer = """
 """
 
 main_page_markup = """
-<form action="/" method="GET">
-  <input id="query" name="query" value="Enter query here..."
+<form action="/" method="GET" style="transform:scale(2)">
+  <textarea id="query" name="query" value="Enter query here..."
     onfocus="this.value=''">
+  </textarea>
   <input id="button" type="submit" value="Search">
 </form>
 """
